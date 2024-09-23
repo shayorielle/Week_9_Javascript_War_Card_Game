@@ -1,0 +1,16 @@
+{
+  "name": "wargame-mocha-chai-testing",
+  "version": "1.0.0",
+  "description": "tests various aspects of our war game",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^10.7.3",
+    "sinon": "^13.0.1"
+  }
+}

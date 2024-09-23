@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mocha / Chai Testing</title>
+    <!-- Link to Mocha's CSS for styling test results, necessary for nice formatting -->
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css" />
+  <!------<link rel="stylesheet" href="style.css">----->
+  </head>
+  <body>
+    <!-- The div where Mocha will output test results -->
+    <div id="mocha">
+      <!-- A basic navigation link -->
+      <p><a href=".">Index</a></p>
+    </div>
+    <!-- Additional divs for custom messages or fixtures if needed -->
+    <div id="messages"></div>
+    <div id="fixtures"></div>
+
+    <button id="draw" style="margin: 1rem;">Draw Card</button>
+
+    <!-- Script tag to include Mocha, the testing framework -->
+    <!-- ensure mocha.js version 10.2.0 is installed -->
+    <script src="/node_modules/mocha/mocha.js"></script>
+
+    <!-- Script tag to include Chai, the assertion library -->
+    <!-- ensure chai js version 4.3.10 is installed -->
+    <script src="/node_modules/chai/chai.js"></script>
+
+    <!-- Optional: Sinon for spies, mocks, and stubs (included but not used in our testing) -->
+    <!-- ensure sinon js version 13.0.1 is installed -->
+    <!-- <script src="./node_modules/sinon/pkg/sinon.js"></script> -->
+
+    <!-- Include the JavaScript file containing your application logic -->
+    <script src="/war.js"></script>
+    <script>
+      // Setup Mocha with 'bdd' interface (describe, it, etc.)
+      mocha.setup("bdd");
+    </script>
+    <!-- Include the JavaScript file containing your Mocha/Chai tests -->
+    <script src="/test.js"></script>
+    <script>
+      // Execute the tests. This will run the tests defined in your test file.
+      mocha.run();
+    </script>
+  </body>
+</html>
