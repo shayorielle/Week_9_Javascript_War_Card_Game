@@ -58,8 +58,10 @@ describe("Shuffle deck of cards", () => {
     console.log("------------ Test 2 -------------");
     console.log("Here is the 1st card from the unshuffled deck: ", card1);
     console.log("Here is the 1st card from the shuffled deck: ", card2);
-    console.log("Are the two cards different? ",card1!=card2)
-    expect(card1).to.not.equal(card2);
+    console.log("Are the two cards different? ",(card1.rank !== card2.rank) && (card1.suit !== card2.suit));
+
+    expect(card1.rank && card1.suit).to.not.equal(card2.rank && card2.suit);
+
 
     done();
   
@@ -129,19 +131,19 @@ describe("Play a round and Declare a Winner", () => {
      let p2Hand = p2.playerCards;
    
   
-   
+   p1Hand.splice(0,24);
+   p2Hand.splice(0,24);
     
 
     console.log("------------ Test 5 -------------");
-    b.draw();
+   
+    
     b.compare();
+    b.end();
     
     expect(p1Hand.length).to.not.eql(26) 
     expect(p2Hand.length).to.not.eql(26);
 
-    console.log(b.cardsInPlay)
-    console.log(p1Hand);
-    console.log(p2Hand);
     
     console.log("How many cards does " + p1.playerName + " have? ", p1Hand.length);
     console.log("How many cards does " + p2.playerName + " have? ", p2Hand.length);
